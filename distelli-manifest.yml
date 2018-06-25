@@ -7,8 +7,8 @@ walter.gildersleeve/daybook_deps:
   Build:
     - echo Bumping build number...
     - echo $DISTELLI_BUILDNUM > build-no.txt
-    - git commit -m 'bumped build number' build-no.txt
-    - git push
+#    - git commit -m 'bumped build number' build-no.txt
+#    - git push
   AfterBuildSuccess:
   AfterBuildFailure:
   PreRelease:
