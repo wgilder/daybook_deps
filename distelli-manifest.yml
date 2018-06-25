@@ -1,0 +1,40 @@
+walter.gildersleeve/daybook_deps:
+# Global section
+  Env:
+
+# Build section
+  PreBuild:
+  Build:
+    - echo Bumping build number...
+    - echo $DISTELLI_BUILDNUM > build-no.txt
+  AfterBuildSuccess:
+  AfterBuildFailure:
+  PreRelease:
+  ReleaseNotesCmd:
+  CommitData:
+    - git commit -m 'bumped build number' build-no.txt
+    - git push
+  PkgInclude:
+    - build-no.txt
+    - info.txt
+  PkgExclude:
+    - distelli-manifest.yml
+    - README.md
+  PreInstall:
+
+# Deploy/Restart section
+  Install:
+  PostInstall:
+  PreRestart:
+  PreStart:
+  Start:
+    - echo Done.
+
+#  Exec:
+  PostStart:
+  PostRestart:
+
+# Terminate section
+  PreTerminate:
+  Terminate:
+  PostTerminate:
