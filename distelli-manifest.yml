@@ -7,13 +7,13 @@ walter.gildersleeve/daybook_deps:
   Build:
     - echo Bumping build number...
     - echo $DISTELLI_BUILDNUM > build-no.txt
+    - git commit -m 'bumped build number' build-no.txt
+    - git push
   AfterBuildSuccess:
   AfterBuildFailure:
   PreRelease:
   ReleaseNotesCmd:
   CommitData:
-    - git commit -m 'bumped build number' build-no.txt
-    - git push
   PkgInclude:
     - build-no.txt
     - info.txt
@@ -23,7 +23,7 @@ walter.gildersleeve/daybook_deps:
   PreInstall:
 
 # Deploy/Restart section
-  Install:
+#  Install:
   PostInstall:
   PreRestart:
   PreStart:
