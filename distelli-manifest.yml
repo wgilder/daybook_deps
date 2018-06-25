@@ -15,11 +15,10 @@ walter.gildersleeve/daybook_deps:
   ReleaseNotesCmd:
   CommitData:
   PkgInclude:
-    - build-no.txt
-    - info.txt
+    - '*.txt'
   PkgExclude:
-    - distelli-manifest.yml
-    - README.md
+    - 'distelli-manifest.yml'
+    - 'README.md'
   PreInstall:
 
 # Deploy/Restart section
@@ -27,6 +26,7 @@ walter.gildersleeve/daybook_deps:
   PostInstall:
   PreRestart:
   PreStart:
+    - cp *.txt /shared-folder/$_TARGET_FOLDER/
   Start:
     - echo Done.
 
